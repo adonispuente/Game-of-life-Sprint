@@ -1,10 +1,10 @@
-/* body {
-  background-color: black;
-} */
+body {
+  background-image: url("hamish-weir-Y61qTmRLcho-unsplash.jpg");
+}
 
 .box {
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid grey;
   width: 15px;
   height: 15px;
   margin-left: -1px;
@@ -12,7 +12,7 @@
 }
 
 .off {
-  background-color: grey;
+  background-color: black;
 }
 .on {
   background-color: blue;
@@ -39,7 +39,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: #6610f2;
+  color: white;
   margin: auto;
   text-align: center;
   width: 50%;
