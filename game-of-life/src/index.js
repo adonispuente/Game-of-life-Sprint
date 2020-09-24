@@ -1,7 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { ButtonToolbar, MenuItem, DropdownButton } from "react-bootstrap";
+import {
+  Nav,
+  Navbar,
+  NavDropdown,
+  Form,
+  FormControl,
+  Button,
+} from "react-bootstrap";
 
 //Need to create a box in which everything is contained
 class Box extends React.Component {
@@ -58,12 +65,36 @@ class Grid extends React.Component {
 //we need to make a button component
 class Buttons extends React.Component {
   handleSelect = (evt) => {
-    this.props.gridSize(evt);
+    this.props.gridSize(evt.target.getAttribute("eventKey"));
   };
 
   render() {
     return (
       <div className="center">
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="#home">Game of Life</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#link">Link</Nav.Link>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
         <nav>
           {/* class name for every button, from bootstrap */}
           <button className="btn btn-default" onClick={this.props.playButton}>
@@ -85,9 +116,15 @@ class Buttons extends React.Component {
             Seed
           </button>
 
-          <button eventKey="1">20x10</button>
-          <button eventKey="2">50x30</button>
-          <button eventKey="3">70x50</button>
+          <button onClick={this.handleSelect} eventKey="1">
+            20x10
+          </button>
+          <button onClick={this.handleSelect} eventKey="2">
+            50x30
+          </button>
+          <button onClick={this.handleSelect} eventKey="3">
+            70x50
+          </button>
         </nav>
       </div>
     );
@@ -161,6 +198,7 @@ class Main extends React.Component {
   };
 
   gridSize = (size) => {
+    console.log(size.target);
     switch (size) {
       case "1":
         this.cols = 20;

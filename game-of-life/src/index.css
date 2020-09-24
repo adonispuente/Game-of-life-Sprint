@@ -1,6 +1,6 @@
-/* body {}
-
- */
+/* body {
+  background-color: black;
+} */
 
 .box {
   display: inline-block;
@@ -12,13 +12,13 @@
 }
 
 .off {
-  background-color: white;
+  background-color: grey;
 }
 .on {
-  background-color: black;
+  background-color: blue;
 }
 .box:hover {
-  background: red;
+  background: #6610f2;
 }
 
 .center {
@@ -39,7 +39,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: black;
+  color: #6610f2;
   margin: auto;
   text-align: center;
   width: 50%;
@@ -49,3 +49,7 @@ h4 {
 h4 {
   margin-top: 0px;
 }
+
+/* button {
+  color: red;
+} */
