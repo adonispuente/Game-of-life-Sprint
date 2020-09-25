@@ -243,6 +243,16 @@ class Main extends React.Component {
           selectBox={this.selectBox}
         />
         <h2>Generations: {this.state.generation}</h2>
+        <h2> Rules </h2>
+        <li>
+          <ul> Any live cell with two or three live neighbours survives.</ul>
+          <ul>Any dead cell with three live neighbours becomes a live cell.</ul>
+          <ul>
+            {" "}
+            All other live cells die in the next generation. Similarly, all
+            other dead cells stay dead.
+          </ul>
+        </li>
       </div>
     );
   }
