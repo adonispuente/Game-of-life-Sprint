@@ -1,14 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import {
-  Nav,
-  Navbar,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Nav, Navbar, Button } from "react-bootstrap";
 
 //Need to create a box in which everything is contained
 class Box extends React.Component {
